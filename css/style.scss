@@ -1,0 +1,164 @@
+// import google font
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+//import varibal color
+@import "./color";
+// root and rebit style
+* {
+  font-family: "Rubik", sans-serif;
+}
+section.par {
+  width: max(700px, 375px);
+  background-color: $White;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  .para {
+    width: max(650px, 325);
+    margin-top: 10px;
+    color: $Grayish-Blue;
+  }
+}
+section.chi {
+  width: max(700px, 375px);
+  height: fit-content;
+  margin: 20px 0;
+  border-left: 1px solid black;
+
+  > div {
+    border-radius: 10px;
+    background-color: $White;
+    height: fit-content;
+    padding: 20px;
+    float: right;
+    width: max(600px, 375px);
+
+    .para {
+      width: max(550px, 325);
+      margin-top: 10px;
+      color: $Grayish-Blue;
+      display: inline;
+      height: fit-content;
+    }
+  }
+}
+.like {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 20px;
+  height: 70px;
+  align-items: center;
+  background-color: $Very-light-gray;
+  padding: 10px;
+  border-radius: 10px;
+  float: left;
+  margin-right: 10px;
+  img {
+    width: 15px;
+    cursor: pointer;
+  }
+  .num {
+    color: $Moderate-blue;
+  }
+}
+.img-avatar {
+  width: 35px;
+}
+.reply {
+  float: right;
+  color: $Moderate-blue;
+  font-weight: 700;
+  cursor: pointer;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .i-n-a {
+    display: flex;
+    align-items: center;
+    .name-avatar {
+      padding: 0 15px;
+    }
+    .last-active {
+      color: $Grayish-Blue;
+    }
+  }
+}
+////////////////////////////////////
+body {
+  // display: flex;
+  // justify-content: center;
+  background-color: $Very-light-gray;
+}
+
+//style container
+.container {
+  width: max(700px, 375px);
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+.chat {
+  width: max(700px, 375px);
+  background-color: $White;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: flex;
+  align-items: flex-start;
+  height: fit-content;
+  img {
+    width: 50px;
+  }
+  textarea {
+    border: 1px solid $Dark-blue;
+    resize: none;
+    padding: 10px;
+    height: min(100px, 50px);
+    width: 75%;
+    margin: 0 10px;
+    border-radius: 10px;
+  }
+  input,
+  .update {
+    background-color: $Moderate-blue;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 500;
+    color: $White;
+    border: none;
+    cursor: pointer;
+  }
+}
+.ed-de {
+  float: right;
+  font-weight: 700;
+  .del {
+    cursor: pointer;
+    color: $Soft-Red;
+    margin-right: 10px;
+  }
+  .edit {
+    cursor: pointer;
+    color: $Moderate-blue;
+  }
+}
+.you {
+  margin-right: 10px;
+  background-color: $Moderate-blue;
+  padding: 5px;
+  color: $White;
+  border-radius: 5px;
+}
+.re {
+  color: $Moderate-blue;
+  font-weight: 500;
+}
+.input-ed {
+  width: 400px;
+  height: 75px;
+}

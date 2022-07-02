@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+  font-family: "Rubik", sans-serif;
+}
+
+section.par {
+  width: 700px;
+  background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+section.par .para {
+  width: 650px;
+  margin-top: 10px;
+  color: #67727e;
+}
+
+section.chi {
+  width: 700px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 20px 0;
+  border-left: 1px solid black;
+}
+
+section.chi > div {
+  border-radius: 10px;
+  background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  float: right;
+  width: 600px;
+}
+
+section.chi > div .para {
+  width: 550px;
+  margin-top: 10px;
+  color: #67727e;
+  display: inline;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.like {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 20px;
+  height: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f5f6fa;
+  padding: 10px;
+  border-radius: 10px;
+  float: left;
+  margin-right: 10px;
+}
+
+.like img {
+  width: 15px;
+  cursor: pointer;
+}
+
+.like .num {
+  color: #5457b6;
+}
+
+.img-avatar {
+  width: 35px;
+}
+
+.reply {
+  float: right;
+  color: #5457b6;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.title .i-n-a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.title .i-n-a .name-avatar {
+  padding: 0 15px;
+}
+
+.title .i-n-a .last-active {
+  color: #67727e;
+}
+
+body {
+  background-color: #f5f6fa;
+}
+
+.container {
+  width: 700px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.chat {
+  width: 700px;
+  background-color: white;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: fit-content;
+}
+
+.chat img {
+  width: 50px;
+}
+
+.chat textarea {
+  border: 1px solid #324152;
+  resize: none;
+  padding: 10px;
+  height: 50px;
+  width: 75%;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.chat input,
+.chat .update {
+  background-color: #5457b6;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 500;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.ed-de {
+  float: right;
+  font-weight: 700;
+}
+
+.ed-de .del {
+  cursor: pointer;
+  color: #ed6468;
+  margin-right: 10px;
+}
+
+.ed-de .edit {
+  cursor: pointer;
+  color: #5457b6;
+}
+
+.you {
+  margin-right: 10px;
+  background-color: #5457b6;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+}
+
+.re {
+  color: #5457b6;
+  font-weight: 500;
+}
+
+.input-ed {
+  width: 400px;
+  height: 75px;
+}
+/*# sourceMappingURL=style.css.map */

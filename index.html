@@ -1,26 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive comments section</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- file css and normliza  -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
 
-  <!-- Pull dynamic content from the data.json file -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <title>Frontend Mentor | Interactive comments section</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Pull dynamic content from the data.json file -->
+    <!-- container div  -->
+    <div class="container">
+      <!-- sction amy -->
+      <section id="1" class="par amy">
+        <div class="con-amy">
+          <div class="like">
+            <img src="./images/icon-plus.svg" class="pls" alt="" srcset="" />
+            <sapn class="num"></sapn>
+            <img src="./images/icon-minus.svg" class="min" alt="" srcset="" />
+          </div>
+          <div class="title">
+            <div class="i-n-a">
+              <img class="img-avatar" />
+              <span class="name-avatar"></span>
+              <span class="last-active"></span>
+            </div>
+            <div class="reply">
+              <img src="./images/icon-reply.svg" alt="" srcset="" />
+              <span class="reply">Reply</span>
+            </div>
+          </div>
+          <div class="para"></div>
+        </div>
+      </section>
+      <!-- sction max -->
+      <section id="2" class="par max">
+        <div class="con-max">
+          <div class="like">
+            <img src="./images/icon-plus.svg" class="pls" alt="" srcset="" />
+            <sapn class="num"></sapn>
+            <img src="./images/icon-minus.svg" class="min" alt="" srcset="" />
+          </div>
+          <div class="title">
+            <div class="i-n-a">
+              <img class="img-avatar" />
+              <span class="name-avatar"></span>
+              <span class="last-active"></span>
+            </div>
+            <div class="reply">
+              <img src="./images/icon-reply.svg" alt="" srcset="" />
+              <span class="reply">Reply</span>
+            </div>
+          </div>
+          <div class="para"></div>
+        </div>
+      </section>
+      <!-- sction ram -->
+      <section id="3" class="chi ram">
+        <div class="con-ram">
+          <div class="like">
+            <img src="./images/icon-plus.svg" class="pls" alt="" srcset="" />
+            <sapn class="num"></sapn>
+            <img src="./images/icon-minus.svg" class="min" alt="" srcset="" />
+          </div>
+          <div class="title">
+            <div class="i-n-a">
+              <img class="img-avatar" />
+              <span class="name-avatar"></span>
+              <span class="last-active"></span>
+            </div>
+            <div class="reply">
+              <img src="./images/icon-reply.svg" alt="" srcset="" />
+              <span class="reply">Reply</span>
+            </div>
+          </div>
+          <div class="para"></div>
+        </div>
+      </section>
+      <!-- sction juli -->
+      <section id="3" class="chi juli">
+        <div class="con-juli">
+          <div class="like">
+            <img src="./images/icon-plus.svg" class="pls" alt="" srcset="" />
+            <sapn class="num"></sapn>
+            <img src="./images/icon-minus.svg" class="min" alt="" srcset="" />
+          </div>
+          <div class="title">
+            <div class="i-n-a">
+              <img class="img-avatar" />
+              <span class="name-avatar"></span>
+              <span class="you">you</span>
+              <span class="last-active"></span>
+            </div>
+            <div class="ed-de">
+              <img src="./images/icon-delete.svg" alt="" />
+              <span class="del">Delete</span>
+              <img src="./images/icon-edit.svg" alt="" />
+              <span class="edit">Edit</span>
+            </div>
+          </div>
+          <span class="re"></span>
+          <div class="para"></div>
+        </div>
+      </section>
+      <div class="chat">
+        <img src="" alt="" />
+        <textarea name="" id="" placeholder="Add a comment..."></textarea>
+        <input type="button" value="SEND" />
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Louy</a>.
+      </div>
+    </div>
+    <!-- file javaScript -->
+    <script src="./main.js"></script>
+  </body>
 </html>
