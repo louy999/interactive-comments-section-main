@@ -7,43 +7,19 @@ async function fectchDatajson() {
 
   function Vote() {
     let pls = document.querySelectorAll(".pls");
-    let number = document.querySelector(".num");
     let min = document.querySelectorAll(".min");
     // add one vote
-
-    pls.forEach((e) => {
-      e.addEventListener("click", () => {
-        if (e.parentElement.children[2].classList == "active") {
-          e.parentElement.children[1].innerHTML + 2;
-          e.classList = "active";
+    document.addEventListener("click", (e) => {
+      console.log();
+      if (e.target.classList == "pls") {
+        e.target.parentElement.children[1].innerHTML++;
+      }
+      if (e.target.classList == "min") {
+        if (e.target.parentElement.children[1].innerHTML == 0) {
         } else {
-          if (e.classList == "active") {
-          } else {
-            e.parentElement.children[1].innerHTML++;
-            e.classList = "active";
-            e.parentElement.children[2].classList = "min";
-          }
+          e.target.parentElement.children[1].innerHTML--;
         }
-      });
-    });
-
-    //minus one vote
-
-    min.forEach((e) => {
-      e.addEventListener("click", () => {
-        console.log("i active");
-        if (e.parentElement.children[0].classList == "active") {
-          e.parentElement.children[1].innerHTML - 2;
-          e.classList = "active";
-        } else {
-          if (e.classList == "active") {
-          } else {
-            e.parentElement.children[1].innerHTML--;
-            e.classList = "active";
-            e.parentElement.children[0].classList = "pls";
-          }
-        }
-      });
+      }
     });
   }
   Vote();
@@ -128,15 +104,7 @@ async function fectchDatajson() {
     commintJuli.innerHTML = `${data.comments[1].replies[1].content}`;
   }
   getCommint();
-  //tag name for reply commint
-  function reCom() {
-    let re = document.querySelector(".con-juli .re");
-    re.innerHTML = `@${data.comments[1].replies[0].user.username}`;
-  }
-  reCom();
-  //function click send
-  //conut id for section
-  idCo = 3;
+  idCo = 4;
   function send() {
     //+1 in id count
     idCo++;
@@ -224,7 +192,66 @@ async function fectchDatajson() {
   deleteAndEditAndUpdate();
 
   //function for add data in json
-  function addData() {}
+  function addData() {
+    let sections = document.querySelectorAll("section");
+    document.querySelector(".send").addEventListener("click", () => {
+      console.log(sections);
+    });
+  }
   addData();
+  //function for replay container
+  function clickReply() {
+    let replay = document.querySelectorAll("div.reply");
+    replay.forEach((e) => {
+      e.addEventListener("click", () => {
+        idCo++;
+        let sectionTarget = e.parentElement.parentElement.parentElement;
+
+        divinput = document.createElement("div");
+        divinput.innerHTML = `
+        <div class="reply-chat">
+          <img src="${data.comments[1].replies[1].user.image.png}" alt="" />
+          <textarea name=""  value='louy' id="" >${sectionTarget.children[0].children[1].children[0].children[1].innerHTML} </textarea>
+          <input type="button" value="Reply" class="Reply" />
+        </div>`;
+        sectionTarget.insertAdjacentElement("afterend", divinput);
+        let button = document.querySelectorAll(".reply-chat input");
+        button.forEach((e) => {
+          e.addEventListener("click", () => {
+            console.log(divinput);
+            console.log();
+            divinput.innerHTML = `<section id="${idCo}" class="chi juli">
+        <div class="con-juli">
+          <div class="like">
+            <img src="./images/icon-plus.svg" class="pls" alt="" srcset="" />
+            <sapn class="num">0</sapn>
+            <img src="./images/icon-minus.svg" class="min" alt="" srcset="" />
+          </div>
+          <div class="title">
+            <div class="i-n-a">
+              <img class="img-avatar" src='${data.comments[1].replies[1].user.image.png}' />
+              <span class="name-avatar">${data.comments[1].replies[1].user.username}</span>
+              <span class="you">you</span>
+              <span class="last-active">5min</span>
+            </div>
+            <div class="ed-de">
+              <img src="./images/icon-delete.svg" alt="" />
+              <span class="del">Delete</span>
+              <img src="./images/icon-edit.svg" alt="" />
+              <span class="edit">Edit</span>
+            </div>
+          </div>
+          <span class="re"></span>
+          <div class="para">${e.parentElement.children[1].value}</div>
+        </div>
+      </section>`;
+          });
+        });
+      });
+    });
+  }
+  clickReply();
+  // function for create post reply
 }
+
 fectchDatajson();

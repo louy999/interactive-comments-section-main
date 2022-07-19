@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 * {
   font-family: "Rubik", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 section.par {
@@ -137,7 +141,8 @@ body {
   margin: 0 auto;
 }
 
-.chat {
+.chat,
+.reply-chat {
   width: 700px;
   background-color: white;
   height: -webkit-fit-content;
@@ -155,11 +160,13 @@ body {
   height: fit-content;
 }
 
-.chat img {
+.chat img,
+.reply-chat img {
   width: 50px;
 }
 
-.chat textarea {
+.chat textarea,
+.reply-chat textarea {
   border: 1px solid #324152;
   resize: none;
   padding: 10px;
@@ -170,7 +177,9 @@ body {
 }
 
 .chat input,
-.chat .update {
+.chat .update,
+.reply-chat input,
+.reply-chat .update {
   background-color: #5457b6;
   border-radius: 10px;
   padding: 10px;
@@ -178,6 +187,10 @@ body {
   color: white;
   border: none;
   cursor: pointer;
+}
+
+.reply-chat {
+  width: 650px;
 }
 
 .ed-de {

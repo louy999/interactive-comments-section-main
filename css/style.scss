@@ -5,6 +5,7 @@
 // root and rebit style
 * {
   font-family: "Rubik", sans-serif;
+  user-select: none;
 }
 section.par {
   width: max(700px, 375px);
@@ -101,7 +102,8 @@ body {
   flex-wrap: wrap;
   margin: 0 auto;
 }
-.chat {
+.chat,
+.reply-chat {
   width: max(700px, 375px);
   background-color: $White;
   height: fit-content;
@@ -133,6 +135,9 @@ body {
     border: none;
     cursor: pointer;
   }
+}
+.reply-chat {
+  width: max(650px, 375px);
 }
 .ed-de {
   float: right;
