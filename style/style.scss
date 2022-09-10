@@ -1,0 +1,116 @@
+@import "./color";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+// @import "../node_modules/normalize.css/normalize.css";
+// global
+* {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $Very-light-gray;
+  #container {
+    margin: 20px auto;
+    width: 80%;
+    #comment {
+      padding: 20px;
+      background-color: $White;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px rgba(204, 204, 204, 0.1);
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      .like {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        height: 90px;
+        padding: 5px 10px;
+        margin: 0 10px 0 0;
+        border-radius: 10px;
+        width: 50px;
+        background-color: $Very-light-gray;
+        i {
+          cursor: pointer;
+          color: $Moderate-blue;
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+          }
+        }
+        span {
+          color: $Moderate-blue;
+          font-weight: 500;
+        }
+      }
+      .content {
+        .info {
+          display: flex;
+          align-items: center;
+          margin-bottom: 10px;
+          img {
+            width: 30px;
+          }
+          .name {
+            font-weight: 500;
+            font-size: 16px;
+            margin: 0 1em;
+          }
+          .last {
+            opacity: 0.5;
+          }
+        }
+        p {
+          opacity: 0.5;
+        }
+      }
+      .reply {
+        display: flex;
+        i {
+          color: $Moderate-blue;
+          margin: 0 5px;
+        }
+        span {
+          color: $Moderate-blue;
+          font-weight: 500;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #comment {
+    flex-wrap: wrap;
+    .like {
+      position: absolute !important;
+      top: 80%;
+      width: fit-content !important;
+      height: fit-content !important;
+      display: inline-block !important;
+    }
+    .content {
+      .info {
+        .name,
+        .last {
+          font-size: 13px !important;
+        }
+      }
+      p {
+        font-size: 13px !important;
+        margin-bottom: 35px;
+      }
+    }
+    .reply {
+      position: absolute;
+      left: 65%;
+      padding: 10px 5px;
+      top: 80%;
+    }
+  }
+}

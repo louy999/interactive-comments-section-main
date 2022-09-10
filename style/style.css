@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+* {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(228deg, 33%, 97%);
+}
+body #container {
+  margin: 20px auto;
+  width: 80%;
+}
+body #container #comment {
+  padding: 20px;
+  background-color: hsl(0deg, 0%, 100%);
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(204, 204, 204, 0.1);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+body #container #comment .like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  height: 90px;
+  padding: 5px 10px;
+  margin: 0 10px 0 0;
+  border-radius: 10px;
+  width: 50px;
+  background-color: hsl(228deg, 33%, 97%);
+}
+body #container #comment .like i {
+  cursor: pointer;
+  color: hsl(238deg, 40%, 52%);
+  opacity: 0.5;
+}
+body #container #comment .like i:hover {
+  opacity: 1;
+}
+body #container #comment .like span {
+  color: hsl(238deg, 40%, 52%);
+  font-weight: 500;
+}
+body #container #comment .content .info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+body #container #comment .content .info img {
+  width: 30px;
+}
+body #container #comment .content .info .name {
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 1em;
+}
+body #container #comment .content .info .last {
+  opacity: 0.5;
+}
+body #container #comment .content p {
+  opacity: 0.5;
+}
+body #container #comment .reply {
+  display: flex;
+}
+body #container #comment .reply i {
+  color: hsl(238deg, 40%, 52%);
+  margin: 0 5px;
+}
+body #container #comment .reply span {
+  color: hsl(238deg, 40%, 52%);
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+@media (max-width: 500px) {
+  #comment {
+    flex-wrap: wrap;
+  }
+  #comment .like {
+    position: absolute !important;
+    top: 80%;
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
+    display: inline-block !important;
+  }
+  #comment .content .info .name,
+#comment .content .info .last {
+    font-size: 13px !important;
+  }
+  #comment .content p {
+    font-size: 13px !important;
+    margin-bottom: 35px;
+  }
+  #comment .reply {
+    position: absolute;
+    left: 65%;
+    padding: 10px 5px;
+    top: 80%;
+  }
+}/*# sourceMappingURL=style.css.map */
