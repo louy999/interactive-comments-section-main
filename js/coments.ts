@@ -1,11 +1,14 @@
 let container = document.querySelector("#container") as HTMLDivElement;
-
+let sendPostImg = document.querySelector(
+  ".send-my-post img"
+) as HTMLImageElement;
 async function fetchComments() {
   let res = await fetch("../data.json");
   let data = await res.json();
-  console.log(data.comments.length);
+  sendPostImg.src = data.comments[1].replies[1].user.image.png;
   for (let i = 0; i < data.comments.length; i++) {
     //fetch and loop on comment
+    let idCo = data.comments[i].id;
 
     //if condition for score
     let score =
@@ -13,11 +16,11 @@ async function fetchComments() {
         ? `0${data.comments[i].score}`
         : `${data.comments[i].score}`;
     container.innerHTML += `
-        <div id="comment" class="comment-${data.comments[i].id}">
+        <div id="comment" class="comment-${data.comments[i].id} rep-${data.comments[i].id}">
             <div class="like">
-                <i class="fa-solid fa-plus plus"></i>
-                <span>${score}</span>
-               <i class="fa-solid fa-minus minus"></i>
+                <i id="${idCo}" class="fa-solid fa-plus plus"></i>
+                <span class="num${idCo} ">${score}</span>
+               <i id="${idCo}" class="fa-solid fa-minus minus"></i>
             </div>
             <div class="content">
                 <div class="info">
@@ -27,15 +30,12 @@ async function fetchComments() {
                 </div>
                 <p>${data.comments[i].content}</p>
             </div>
-            <div class="reply">
+            <div id="${idCo}" class="reply">
                 <i class="fa-solid fa-reply"></i>
                 <span>reply</span>
             </div>
         </div>
     `;
-
-    //for loop in replays
-    console.log(data.comments[i].replies);
   }
 }
 fetchComments();

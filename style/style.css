@@ -13,17 +13,39 @@ body #container {
   margin: 20px auto;
   width: 80%;
 }
-body #container #comment {
+body #container #comment,
+body #container #replay {
   padding: 20px;
   background-color: hsl(0deg, 0%, 100%);
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(204, 204, 204, 0.1);
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   position: relative;
 }
-body #container #comment .like {
+body #container #comment input,
+body #container #replay input {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  cursor: pointer;
+  top: 80%;
+  right: 20px;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(238deg, 40%, 52%);
+}
+body #container #comment input:hover,
+body #container #replay input:hover {
+  opacity: 0.5;
+}
+body #container #comment .like,
+body #container #replay .like {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,55 +58,266 @@ body #container #comment .like {
   width: 50px;
   background-color: hsl(228deg, 33%, 97%);
 }
-body #container #comment .like i {
+body #container #comment .like i,
+body #container #replay .like i {
   cursor: pointer;
   color: hsl(238deg, 40%, 52%);
   opacity: 0.5;
 }
-body #container #comment .like i:hover {
+body #container #comment .like i:hover,
+body #container #replay .like i:hover {
   opacity: 1;
 }
-body #container #comment .like span {
+body #container #comment .like span,
+body #container #replay .like span {
   color: hsl(238deg, 40%, 52%);
   font-weight: 500;
 }
-body #container #comment .content .info {
+body #container #comment .content .info,
+body #container #replay .content .info {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
-body #container #comment .content .info img {
+body #container #comment .content .info img,
+body #container #replay .content .info img {
   width: 30px;
 }
-body #container #comment .content .info .name {
+body #container #comment .content .info .name,
+body #container #replay .content .info .name {
   font-weight: 500;
   font-size: 16px;
   margin: 0 1em;
 }
-body #container #comment .content .info .last {
+body #container #comment .content .info .you,
+body #container #replay .content .info .you {
+  margin-right: 1em;
+  padding: 3px 5px;
+  border-radius: 3px;
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(238deg, 40%, 52%);
+}
+body #container #comment .content .info .last,
+body #container #replay .content .info .last {
   opacity: 0.5;
 }
-body #container #comment .content p {
+body #container #comment .content p,
+body #container #comment .content textarea,
+body #container #replay .content p,
+body #container #replay .content textarea {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: hsl(211deg, 10%, 45%);
+}
+body #container #comment .content p span.rep-to,
+body #container #comment .content textarea span.rep-to,
+body #container #replay .content p span.rep-to,
+body #container #replay .content textarea span.rep-to {
+  color: hsl(238deg, 40%, 52%);
+  font-weight: 700;
+}
+body #container #comment .content textarea.edit-text,
+body #container #replay .content textarea.edit-text {
+  width: 20em;
+  position: relative;
+  height: 10em;
+  resize: none;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+body #container #comment .reply:hover,
+body #container #replay .reply:hover {
   opacity: 0.5;
 }
-body #container #comment .reply {
+body #container #comment .reply,
+body #container #comment .del-ed,
+body #container #replay .reply,
+body #container #replay .del-ed {
   display: flex;
+  font-size: 15px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-body #container #comment .reply i {
+body #container #comment .reply i,
+body #container #comment .del-ed i,
+body #container #replay .reply i,
+body #container #replay .del-ed i {
+  cursor: pointer;
   color: hsl(238deg, 40%, 52%);
   margin: 0 5px;
 }
-body #container #comment .reply span {
+body #container #comment .reply span,
+body #container #comment .del-ed span,
+body #container #replay .reply span,
+body #container #replay .del-ed span {
+  cursor: pointer;
   color: hsl(238deg, 40%, 52%);
   font-weight: 500;
   text-transform: capitalize;
 }
+body #container #comment .del-ed span,
+body #container #replay .del-ed span {
+  display: flex;
+}
+body #container #comment .del-ed span:hover,
+body #container #replay .del-ed span:hover {
+  opacity: 0.5;
+}
+body #container #comment .del-ed span.delete,
+body #container #replay .del-ed span.delete {
+  color: hsl(358deg, 79%, 66%);
+}
+body #container #comment .del-ed span.delete i,
+body #container #replay .del-ed span.delete i {
+  color: hsl(358deg, 79%, 66%);
+}
 
-@media (max-width: 500px) {
-  #comment {
+.replay-div {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  float: right;
+  position: relative;
+  padding: 0 0 0 3vw !important;
+  border-left: 1px solid hsl(239deg, 57%, 85%);
+}
+
+.send-my-post,
+.send-my-rep {
+  display: inline-flex;
+  justify-content: center;
+  position: relative;
+  margin: 50px 0;
+  width: 100%;
+}
+.send-my-post > div,
+.send-my-rep > div {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 20px;
+  border-radius: 10px;
+  align-items: flex-start;
+}
+.send-my-post > div img,
+.send-my-rep > div img {
+  width: 40px;
+  margin-right: 5px;
+}
+.send-my-post > div textarea,
+.send-my-rep > div textarea {
+  height: 70px;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  resize: none;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border: 1px solid hsl(211deg, 10%, 45%);
+  border-radius: 10px;
+}
+.send-my-post > div input,
+.send-my-rep > div input {
+  color: hsl(0deg, 0%, 100%);
+  padding: 5px 10px;
+  background-color: hsl(238deg, 40%, 52%);
+  margin-left: 5px;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.send-my-post > div input:hover,
+.send-my-rep > div input:hover {
+  opacity: 0.5;
+}
+
+.send-my-rep {
+  margin: -10px 0 10px 0;
+  display: block;
+}
+.send-my-rep > div {
+  width: 100%;
+}
+
+.confirme-delete {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  transition: 0.3;
+  justify-content: center;
+  align-items: center;
+  z-index: 5163;
+  display: none;
+}
+.confirme-delete > div {
+  background: hsl(0deg, 0%, 100%);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 30%;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.confirme-delete > div h1 {
+  font-size: 1.5em;
+  color: hsl(212deg, 24%, 26%);
+}
+.confirme-delete > div p {
+  color: hsl(211deg, 10%, 45%);
+  text-transform: capitalize;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 1em 0;
+}
+.confirme-delete > div .in {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.confirme-delete > div .in input {
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  cursor: pointer;
+  width: 45%;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+.confirme-delete > div .in input:hover {
+  opacity: 0.5;
+}
+.confirme-delete > div .in input.yas {
+  background-color: hsl(358deg, 79%, 66%);
+}
+.confirme-delete > div .in input.no {
+  background-color: hsl(212deg, 24%, 26%);
+}
+
+@media (max-width: 580px) {
+  #comment,
+#replay {
     flex-wrap: wrap;
   }
-  #comment .like {
+  #comment .like,
+#replay .like {
     position: absolute !important;
     top: 80%;
     width: -webkit-fit-content !important;
@@ -96,17 +329,37 @@ body #container #comment .reply span {
     display: inline-block !important;
   }
   #comment .content .info .name,
-#comment .content .info .last {
+#comment .content .info .you,
+#comment .content .info .last,
+#replay .content .info .name,
+#replay .content .info .you,
+#replay .content .info .last {
     font-size: 13px !important;
   }
-  #comment .content p {
+  #comment .content p,
+#replay .content p {
     font-size: 13px !important;
     margin-bottom: 35px;
   }
-  #comment .reply {
+  #comment .reply,
+#comment .del-ed,
+#replay .reply,
+#replay .del-ed {
     position: absolute;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     left: 65%;
     padding: 10px 5px;
     top: 80%;
+    font-size: 13px !important;
   }
+  #comment .del-ed,
+#replay .del-ed {
+    left: 50%;
+  }
+}
+.dis {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

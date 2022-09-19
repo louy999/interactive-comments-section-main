@@ -34,30 +34,42 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var container = document.querySelector("#container");
-var sendPostImg = document.querySelector(".send-my-post img");
-function fetchComments() {
-    return __awaiter(this, void 0, void 0, function () {
-        var res, data, i, idCo, score;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, fetch("../data.json")];
-                case 1:
-                    res = _a.sent();
-                    return [4 /*yield*/, res.json()];
-                case 2:
-                    data = _a.sent();
-                    sendPostImg.src = data.comments[1].replies[1].user.image.png;
-                    for (i = 0; i < data.comments.length; i++) {
-                        idCo = data.comments[i].id;
-                        score = data.comments[i].score < 10
-                            ? "0".concat(data.comments[i].score)
-                            : "".concat(data.comments[i].score);
-                        container.innerHTML += "\n        <div id=\"comment\" class=\"comment-".concat(data.comments[i].id, " rep-").concat(data.comments[i].id, "\">\n            <div class=\"like\">\n                <i id=\"").concat(idCo, "\" class=\"fa-solid fa-plus plus\"></i>\n                <span class=\"num").concat(idCo, " \">").concat(score, "</span>\n               <i id=\"").concat(idCo, "\" class=\"fa-solid fa-minus minus\"></i>\n            </div>\n            <div class=\"content\">\n                <div class=\"info\">\n                    <img src=\"").concat(data.comments[i].user.image.png, "\"/>\n                    <span class=\"name\">").concat(data.comments[i].user.username, "</span>\n                    <span class=\"last\">").concat(data.comments[i].createdAt, "</span>\n                </div>\n                <p>").concat(data.comments[i].content, "</p>\n            </div>\n            <div id=\"").concat(idCo, "\" class=\"reply\">\n                <i class=\"fa-solid fa-reply\"></i>\n                <span>reply</span>\n            </div>\n        </div>\n    ");
-                    }
-                    return [2 /*return*/];
-            }
+window.addEventListener("load", function () {
+    function app() {
+        return __awaiter(this, void 0, void 0, function () {
+            var res, data, btnsReplay;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, fetch("../data.json")];
+                    case 1:
+                        res = _a.sent();
+                        return [4 /*yield*/, res.json()];
+                    case 2:
+                        data = _a.sent();
+                        btnsReplay = document.querySelectorAll(".reply");
+                        btnsReplay.forEach(function (btn) {
+                            btn.addEventListener("click", function () {
+                                var divRep = document.querySelector(".rep-".concat(btn.id));
+                                var chatRep = document.createElement("div");
+                                chatRep.classList.add("send-my-rep");
+                                chatRep.classList.add("reply-".concat(btn.id));
+                                chatRep.innerHTML = " \n                  <div>\n                    <img src=\"".concat(data.currentUser.image.png, "\" alt=\"\" />\n                    <textarea name=\"\" id=\"\" placeholder=\"Add a comment...\"></textarea>\n                    <input type=\"button\" value=\"reply\" />\n                    </div>\n                    ");
+                                if (divRep.classList[2] !== "active") {
+                                    divRep === null || divRep === void 0 ? void 0 : divRep.insertAdjacentElement("afterend", chatRep);
+                                    divRep.classList.add("active");
+                                }
+                                else {
+                                    divRep.classList.remove("active");
+                                    var div = document.querySelector(".reply-".concat(btn.id));
+                                    div.style.display = "none";
+                                }
+                            });
+                        });
+                        return [2 /*return*/];
+                }
+            });
         });
-    });
-}
-fetchComments();
+    }
+    app();
+});
+var d = new Date();
