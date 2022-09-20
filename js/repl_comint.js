@@ -40,7 +40,7 @@ window.addEventListener("load", function () {
             var res, data, btnsReplay;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, fetch("../data.json")];
+                    case 0: return [4 /*yield*/, fetch("./data.json")];
                     case 1:
                         res = _a.sent();
                         return [4 /*yield*/, res.json()];

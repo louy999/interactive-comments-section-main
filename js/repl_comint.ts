@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
   async function app() {
-    let res = await fetch("../data.json");
+    let res = await fetch("./data.json");
     let data = await res.json();
 
     let btnsReplay = document.querySelectorAll(".reply");

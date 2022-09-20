@@ -3,7 +3,7 @@ let sendPostImg = document.querySelector(
   ".send-my-post img"
 ) as HTMLImageElement;
 async function fetchComments() {
-  let res = await fetch("../data.json");
+  let res = await fetch("./data.json");
   let data = await res.json();
   sendPostImg.src = data.comments[1].replies[1].user.image.png;
   for (let i = 0; i < data.comments.length; i++) {
